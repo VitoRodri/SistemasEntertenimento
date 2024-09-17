@@ -27,23 +27,16 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
   
-  
+  Serial.flush();
   int value=analogRead(A2);
   value=map(value,0,100,0,10);
-  String unity= Serial.readString();
-
-  if (unity=="2"){
-    digitalWrite(5,1);
-  } else if (unity=="1"){
-    digitalWrite(6,1);
-  } else{
-    digitalWrite(5,0);
-    digitalWrite(6,0);
-  }
+  
 
   if (digitalRead(7)==LOW){
- 
-    if (tcs.begin()) {
+    
+    
+
+    /* if (tcs.begin()) {
 
     } else {
       Serial.println("No TCS34725 found ... check your connections");
@@ -84,8 +77,9 @@ void loop() {
   
     analogWrite(redpin, gammatable[(int)red]);
     analogWrite(greenpin, gammatable[(int)green]);
-    analogWrite(bluepin, gammatable[(int)blue]);
+    analogWrite(bluepin, gammatable[(int)blue]); */
 
+    Serial.println("Button 3 pressed");
 
   }else if (digitalRead(8)==LOW){
     Serial.println("Button 1 pressed");
@@ -106,5 +100,17 @@ void loop() {
     }
   }
 
+  String unity= Serial.readString();
+
+  if (unity=="2"){
+    digitalWrite(5,1);
+  } else if (unity=="1"){
+    digitalWrite(6,1);
+  } else{
+    digitalWrite(5,0);
+    digitalWrite(6,0);
+  }
+
+  delay(10);
 
 }
