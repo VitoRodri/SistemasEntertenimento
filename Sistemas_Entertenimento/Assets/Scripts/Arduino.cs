@@ -11,7 +11,8 @@ public class Arduino : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        arduino.Open();
+        arduino.Open ();
+        
         
     }
 
@@ -21,7 +22,7 @@ public class Arduino : MonoBehaviour
         serialmonitor = arduino.ReadLine();
         if(serialmonitor=="Button 2 pressed")
         {
-            Application.Quit();
+            
         }
     }
 }
