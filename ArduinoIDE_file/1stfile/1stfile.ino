@@ -26,31 +26,73 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
+
+
+  if (digitalRead(7)==LOW){
+    Serial.println("Button 3 pressed");
+
+  }else if (digitalRead(8)==LOW){
+    Serial.println("Button 1 pressed");
+
+
+  }else if (digitalRead(9)==LOW){
+    Serial.println("Button 2 pressed");
+
+
+  } else if (digitalRead(8)==LOW and digitalRead(9)==LOW){
+    Serial.println("Both buttons pressed");
+  }
   
   int value=analogRead(A2);
-  value=map(value,0,100,0,10);
+  value=map(value,0,300,0,100);
   String unity= Serial.readString();
 
-  if (unity=="2"){
+  if (unity=="win"){
     digitalWrite(5,1);
-  } else if (unity=="1"){
+  } else if (unity=="lose"){
     digitalWrite(6,1);
   } else{
     digitalWrite(5,0);
     digitalWrite(6,0);
   }
 
-  if (digitalRead(7)==LOW){
-    
-    
+  if (unity=="temperature"){
+    if (value==100){
+      Serial.println(100);
+    } else if(value<100 and value>90){
+      Serial.println(90s);
+    } else if(value<90 and value>80){
+      Serial.println(80);
+    } else if(value<80 and value>70){
+      Serial.println(70);
+    } else if(value<70 and value>60){
+      Serial.println(60);
+    } else if(value<60 and value>50){
+      Serial.println(50);
+    } else if(value<50 and value>40){
+      Serial.println(40);
+    } else if(value<40 and value>30){
+      Serial.println(30);
+    } else if(value<30 and value>20){
+      Serial.println(20);
+    } else if(value<20 and value>10){
+      Serial.println(10);
+    } else if(value<10 and value>0){
+      Serial.println(01);
+    } else if(value==0){
+      Serial.println(0);
+    }
+  }
 
-    /* if (tcs.begin()) {
+  if (unity=="color"){
+
+    if (tcs.begin()) {
 
     } else {
       Serial.println("No TCS34725 found ... check your connections");
       while (1); 
     }
-    
+      
     for (int i = 0; i < 256; i++) {
       float x = i;
       x /= 255;
@@ -69,7 +111,7 @@ void loop() {
     delay(60);  // takes 50ms to read
     tcs.getRGB(&red, &green, &blue);
     tcs.setInterrupt(true);  // turn off LED
-  
+    
     //Serial.print("R:\t"); Serial.print(int(red));
     //Serial.print("\tG:\t"); Serial.print(int(green));
     //Serial.print("\tB:\t"); Serial.print(int(blue));
@@ -82,32 +124,11 @@ void loop() {
       Serial.print("Blue");
     }
     Serial.print("\n");
-  
+    
     analogWrite(redpin, gammatable[(int)red]);
     analogWrite(greenpin, gammatable[(int)green]);
-    analogWrite(bluepin, gammatable[(int)blue]); */
-
-    Serial.println("Button 3 pressed");
-
-  }else if (digitalRead(8)==LOW){
-    Serial.println("Button 1 pressed");
-
-
-  }else if (digitalRead(9)==LOW){
-    Serial.println("Button 2 pressed");
-
-
-  } else if (digitalRead(8)==LOW and digitalRead(9)==LOW){
-
-    if (value>60){
-      Serial.println("Hot");
-    } else if(value<60 and value>40){
-      Serial.println("Medium");
-    } else if(value<40){
-      Serial.println("Cold");
-    }
+    analogWrite(bluepin, gammatable[(int)blue]);
   }
 
-  
 
 }

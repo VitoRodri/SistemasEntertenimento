@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\CofeeType.cs" />
     <Compile Include="Assets\Scripts\Arduino.cs" />
+    <Compile Include="Assets\Scripts\CoffeeIngredients.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

@@ -4,20 +4,47 @@ using UnityEngine;
 
 public class CofeeType : MonoBehaviour
 {
-    private string[] coffee_name = { "black_coffee", "milk_coffee" };
-    private int value;
+    //Added ingredients ex: milk, sugar, ...
+    private string[] coffee_name = { "dark", "milk","sweet","sweet_milk" };
+    //Color of the coffee ex: green - matcha, ...
+    private string[] coffee_type = { "coffee_beans","matcha","strawberries" };
+    //Coffee temperature
+    private string[] coffee_temp = { "hot","medium","cold","iced" };
 
-    public string Coffee(bool milk)
+
+    private int nomenclature;
+    private int type;
+    private int temp=0;
+
+
+    public string Coffee(int ingredient, string color)
     {
-        if (milk == true)
+        nomenclature = ingredient;
+        type=Coffee_Color(color);
+
+        string coffee_order = coffee_name[nomenclature] + coffee_type[type] + coffee_temp[temp];
+
+        return coffee_order;
+    }
+
+    private int Coffee_Color(string color)
+    {
+        if (color == "Red")
         {
-            value = 1;
+            return 2;
+        }
+        else if (color == "Green")
+        {
+            return 1;
+        }
+        else if (color == "Blue")
+        {
+            return 0;
         }
         else
         {
-            value = 0;
+            return 0;
         }
-
-        return coffee_name[value];
+        
     }
 }

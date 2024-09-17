@@ -8,8 +8,10 @@ public class Arduino : MonoBehaviour
 
     SerialPort arduino = new SerialPort("COM4", 9600);
     public string serialmonitor;
-    private bool milk=false;
+    private int ingredient=0;
+    private string color = "brown";
     public CofeeType coffee;
+    public CoffeeIngredients coffee_ingredients;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,8 +26,10 @@ public class Arduino : MonoBehaviour
         
         if (serialmonitor=="Button 2 pressed")
         {
-            arduino.Write("2");
-            milk = true;
+            arduino.Write("color");
+            arduino.ReadTimeout=60;
+            string color = arduino.ReadLine();
+            coffee_ingredients.ingredients[1] = true;
             
         }
         else if (serialmonitor=="Button 1 pressed")
@@ -34,8 +38,9 @@ public class Arduino : MonoBehaviour
         } 
         else if (serialmonitor=="Button 3 pressed")
         {
-            Debug.Log(coffee.Coffee(milk));
-            milk = false;
+            ingredient = coffee_ingredients.Ingredient();
+            Debug.Log(coffee.Coffee(ingredient, color));
+            
         }
     }
 }
