@@ -22,7 +22,11 @@ public class Arduino : MonoBehaviour
         serialmonitor = arduino.ReadLine();
         if(serialmonitor=="Button 2 pressed")
         {
-            
+            arduino.Write("2");
+        }
+        else if (serialmonitor=="Button 1 pressed")
+        {
+            UnityEditor.EditorApplication.isPlaying = false;
         }
     }
 }

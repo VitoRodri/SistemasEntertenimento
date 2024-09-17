@@ -26,8 +26,20 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
+  
+  
   int value=analogRead(A2);
   value=map(value,0,100,0,10);
+  String unity= Serial.readString();
+
+  if (unity=="2"){
+    digitalWrite(5,1);
+  } else if (unity=="1"){
+    digitalWrite(6,1);
+  } else{
+    digitalWrite(5,0);
+    digitalWrite(6,0);
+  }
 
   if (digitalRead(7)==LOW){
  
@@ -76,12 +88,10 @@ void loop() {
 
 
   }else if (digitalRead(8)==LOW){
-    digitalWrite(6,1);
     Serial.println("Button 1 pressed");
 
 
   }else if (digitalRead(9)==LOW){
-    digitalWrite(5,1);
     Serial.println("Button 2 pressed");
 
 
@@ -94,10 +104,7 @@ void loop() {
     } else if(value<40){
       Serial.println("Cold");
     }
-  } else {
-    digitalWrite(6,0);
-    digitalWrite(5,0);
   }
-  delay(100);
+
 
 }
