@@ -21,7 +21,7 @@ public class Arduino : MonoBehaviour
     void Update()
     {
         serialmonitor = arduino.ReadLine();
-        arduino.ReadTimeout = 15;
+        
         if (serialmonitor=="Button 2 pressed")
         {
             arduino.Write("2");
