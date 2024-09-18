@@ -10,6 +10,7 @@ public class Arduino : MonoBehaviour
     public string serialmonitor;
     private int ingredient=0;
     private string color = "brown";
+    private int temp = 0;
     public CofeeType coffee;
     public CoffeeIngredients coffee_ingredients;
     // Start is called before the first frame update
@@ -23,24 +24,29 @@ public class Arduino : MonoBehaviour
     void Update()
     {
         serialmonitor = arduino.ReadLine();
-        
-        if (serialmonitor=="Button 2 pressed")
+
+        if (serialmonitor == "Button 2 pressed")
         {
-            arduino.Write("color");
-            arduino.ReadTimeout=60;
-            string color = arduino.ReadLine();
             coffee_ingredients.ingredients[1] = true;
-            
+
+
         }
-        else if (serialmonitor=="Button 1 pressed")
+        else if (serialmonitor == "Button 1 pressed")
         {
             UnityEditor.EditorApplication.isPlaying = false;
-        } 
-        else if (serialmonitor=="Button 3 pressed")
-        {
-            ingredient = coffee_ingredients.Ingredient();
-            Debug.Log(coffee.Coffee(ingredient, color));
-            
         }
+        else if (serialmonitor == "Button 3 pressed")
+        {
+            new WaitForSecondsRealtime(6);
+            color = arduino.ReadLine();
+            ingredient = coffee_ingredients.Ingredient();
+            Debug.Log(coffee.Coffee(ingredient, color, temp));
+
+        }
+        else if (int.TryParse(serialmonitor, out temp) == true)
+        {
+            Debug.Log(temp);
+        }
+        
     }
 }

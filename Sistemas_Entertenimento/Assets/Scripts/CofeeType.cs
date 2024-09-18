@@ -5,24 +5,25 @@ using UnityEngine;
 public class CofeeType : MonoBehaviour
 {
     //Added ingredients ex: milk, sugar, ...
-    private string[] coffee_name = { "dark", "milk","sweet","sweet_milk" };
+    private string[] coffee_name = { " dark ", "milk","sweet","sweet_milk" };
     //Color of the coffee ex: green - matcha, ...
-    private string[] coffee_type = { "coffee_beans","matcha","strawberries" };
+    private string[] coffee_type = { " beans ","matcha","strawberries" };
     //Coffee temperature
-    private string[] coffee_temp = { "hot","medium","cold","iced" };
+    private string[] coffee_temp = { " hot ","medium","cold","iced", "evaporated" };
 
 
     private int nomenclature;
     private int type;
-    private int temp=0;
+    private int temperature;
 
 
-    public string Coffee(int ingredient, string color)
+    public string Coffee(int ingredient, string color, int temp)
     {
         nomenclature = ingredient;
         type=Coffee_Color(color);
+        temperature = Coffee_Temperature(temp);
 
-        string coffee_order = coffee_name[nomenclature] + coffee_type[type] + coffee_temp[temp];
+        string coffee_order = coffee_name[nomenclature] + coffee_type[type] + coffee_temp[temperature];
 
         return coffee_order;
     }
@@ -44,6 +45,31 @@ public class CofeeType : MonoBehaviour
         else
         {
             return 0;
+        }
+        
+    }
+
+    private int Coffee_Temperature(int temp)
+    {
+        if (temp<=20)
+        {
+            return 3;
+        }
+        else if (temp>20 & temp <=40)
+        {
+            return 2;
+        }
+        else if (temp>40 & temp <= 60)
+        {
+            return 1;
+        }
+        else if (temp>60 & temp <= 80)
+        {
+            return 0;
+        }
+        else
+        {
+            return 4;
         }
         
     }
