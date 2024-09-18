@@ -7,7 +7,7 @@ public class CofeeType : MonoBehaviour
     //Added ingredients ex: milk, sugar, ...
     private string[] coffee_name = { " dark ", "milk","sweet","sweet_milk" };
     //Color of the coffee ex: green - matcha, ...
-    private string[] coffee_type = { " beans ","matcha","strawberries" };
+    private string[] coffee_type = { " beans ","matcha","strawberries", "blueberry","white_chocolate", "special" };
     //Coffee temperature
     private string[] coffee_temp = { " hot ","medium","cold","iced", "evaporated" };
 
@@ -40,11 +40,19 @@ public class CofeeType : MonoBehaviour
         }
         else if (color == "Blue")
         {
+            return 3;
+        }
+        else if (color == "Black")
+        {
             return 0;
+        }
+        else if (color == "White")
+        {
+            return 4;
         }
         else
         {
-            return 0;
+            return 5;
         }
         
     }

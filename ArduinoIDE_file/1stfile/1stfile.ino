@@ -60,11 +60,15 @@ void loop() {
     //Serial.print("\tG:\t"); Serial.print(int(green));
     //Serial.print("\tB:\t"); Serial.print(int(blue));
 
-    if(red>green and red>blue){
+    if (red<120 and red>100 and green<100 and blue<100){
+      Serial.println("Black");
+    }else if (red<100 and green<100 and blue<100){
+      Serial.println("White");
+    }else if(red>120){
       Serial.println("Red");
-    } else if (green>red and green>blue){
+    } else if (green>100){
       Serial.println("Green");
-    } else if (blue>red and blue>green){
+    } else if (blue>100){
       Serial.println("Blue");
     }
     

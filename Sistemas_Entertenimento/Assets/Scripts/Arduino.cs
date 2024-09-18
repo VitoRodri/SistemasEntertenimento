@@ -37,7 +37,6 @@ public class Arduino : MonoBehaviour
         }
         else if (serialmonitor == "Button 3 pressed")
         {
-            new WaitForSecondsRealtime(6);
             color = arduino.ReadLine();
             ingredient = coffee_ingredients.Ingredient();
             Debug.Log(coffee.Coffee(ingredient, color, temp));
