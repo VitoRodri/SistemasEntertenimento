@@ -17,7 +17,7 @@ public class CoffeeIngredients : MonoBehaviour
 
     public int Ingredient()
     {
-        if (ingredients[1] & ingredients[2])
+        if (ingredients[1]==true & ingredients[2]==true)
         {
             ingredients[3] = true;
             ingredients[1] = false;

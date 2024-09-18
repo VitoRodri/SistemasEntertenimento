@@ -33,13 +33,15 @@ public class Arduino : MonoBehaviour
         }
         else if (serialmonitor == "Button 1 pressed")
         {
-            UnityEditor.EditorApplication.isPlaying = false;
+            coffee_ingredients.ingredients[2] = true;
         }
         else if (serialmonitor == "Button 3 pressed")
         {
             color = arduino.ReadLine();
             ingredient = coffee_ingredients.Ingredient();
             Debug.Log(coffee.Coffee(ingredient, color, temp));
+
+            UnityEditor.EditorApplication.isPlaying = false;
 
         }
         else if (int.TryParse(serialmonitor, out temp) == true)
