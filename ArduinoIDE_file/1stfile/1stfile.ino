@@ -91,9 +91,9 @@ void loop() {
   String unity= Serial.readString();
   
   if (unity=="win"){
-    digitalWrite(5,1);
-  } else if (unity=="lose"){
     digitalWrite(6,1);
+  } else if (unity=="lose"){
+    digitalWrite(5,1);
   } else{
     digitalWrite(5,0);
     digitalWrite(6,0);
