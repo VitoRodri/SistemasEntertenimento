@@ -1474,7 +1474,7 @@ GameObject:
   - component: {fileID: 1873690035}
   - component: {fileID: 1873690034}
   m_Layer: 5
-  m_Name: Milk (2)
+  m_Name: Sugar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1635,7 +1635,7 @@ GameObject:
   - component: {fileID: 2118869490}
   - component: {fileID: 2118869489}
   m_Layer: 5
-  m_Name: Milk (1)
+  m_Name: Milk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
