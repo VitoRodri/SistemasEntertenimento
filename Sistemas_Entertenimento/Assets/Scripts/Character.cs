@@ -7,6 +7,7 @@ public class Character : MonoBehaviour
 {
     private CofeeType coffee;
     private GameObject SceneManager;
+    private Speech text;
     private string color;
     private string[] colours = { "Black", "Green", "Red", "Blue", "White" };
     public string coffee_order;
@@ -16,6 +17,8 @@ public class Character : MonoBehaviour
         SceneManager=GameObject.Find("SceneManager");
         coffee = SceneManager.GetComponent<CofeeType>();
         image=GetComponentInChildren<Image>();
+        text = GetComponentInChildren<Speech>();
+        
         int number_image = Random.Range(1,4);
         int number_name = Random.Range(0, 3);
         int number_type = Random.Range(0,4);
@@ -23,9 +26,14 @@ public class Character : MonoBehaviour
         image.sprite = Picture(number_image);
         color = colours[number_type];
         coffee_order = coffee.Coffee(number_name,color,number_temp);
+        text.TextBubble(coffee_order);
         Debug.Log(coffee_order);
         
 
+    }
+    public string Order()
+    {
+        return coffee_order;
     }
 
     private Sprite Picture(int n)
