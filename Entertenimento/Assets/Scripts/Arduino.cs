@@ -21,6 +21,8 @@ public class Arduino : MonoBehaviour
     private GameObject screen;
     private GameObject slide_temp;
     private Slider slide;
+    private GameObject milk_button;
+    private Button milk;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +31,8 @@ public class Arduino : MonoBehaviour
         screen = GameObject.Find("GameScreen");
         slide_temp = GameObject.Find("Slider");
         slide = slide_temp.GetComponent<Slider>();
+        milk_button = GameObject.Find("Milk");
+        milk= milk_button.GetComponent<Button>();
     }
 
     // Update is called once per frame
@@ -40,6 +44,7 @@ public class Arduino : MonoBehaviour
         if (serialmonitor == "Button 2 pressed")
         {
             coffee_ingredients.ingredients[1] = true;
+            milk.interactable = false;
 
         }
         else if (serialmonitor == "Button 1 pressed")
@@ -48,7 +53,7 @@ public class Arduino : MonoBehaviour
         }
         else if (serialmonitor == "Button 3 pressed")
         {
-            
+            milk.interactable = true;
             npc = character.GetComponent<Character>();
 
             color = arduino.ReadLine();

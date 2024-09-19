@@ -17,12 +17,16 @@ public class Keyboard : MonoBehaviour
     private GameObject screen;
     private GameObject slide_temp;
     private Slider slide;
+    private GameObject milk_button;
+    private Button milk;
     // Start is called before the first frame update
     void Start()
     {
         character = GameObject.Find("npc");
         screen = GameObject.Find("GameScreen");
         slide_temp = GameObject.Find("Slider");
+        milk_button = GameObject.Find("Milk");
+        milk = milk_button.GetComponent<Button>();
     }
 
     // Update is called once per frame
@@ -38,10 +42,12 @@ public class Keyboard : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             coffee_ingredients.ingredients[1] = true;
+            milk.interactable = false;
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             coffee_ingredients.ingredients[2] = true;
+            milk.interactable = true;
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
