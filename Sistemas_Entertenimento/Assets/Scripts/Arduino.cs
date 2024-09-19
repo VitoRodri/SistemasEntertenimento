@@ -20,13 +20,13 @@ public class Arduino : MonoBehaviour
     void Start()
     {
         arduino.Open ();
-
+        character = GameObject.Find("npc");
     }
 
     // Update is called once per frame
     void Update()
     {
-        character = GameObject.Find("npc");
+        
 
         serialmonitor = arduino.ReadLine();
 

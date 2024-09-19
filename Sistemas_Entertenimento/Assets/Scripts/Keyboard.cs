@@ -15,13 +15,13 @@ public class Keyboard : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        character = GameObject.Find("npc");
     }
 
     // Update is called once per frame
     void Update()
     {
-        character = GameObject.Find("npc");
+        
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             UnityEditor.EditorApplication.isPlaying = false;
