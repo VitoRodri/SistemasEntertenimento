@@ -1,14 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.IO.Ports;
 
-public class Arduino : MonoBehaviour
+public class Keyboard : MonoBehaviour
 {
-
-    SerialPort arduino = new SerialPort("COM4", 9600);
-    public string serialmonitor;
-    private int ingredient=0;
+    private int ingredient = 0;
     private string color = "brown";
     private int temp = 0;
     private string order;
@@ -19,32 +15,29 @@ public class Arduino : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        arduino.Open ();
-
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         character = GameObject.Find("npc");
-
-        serialmonitor = arduino.ReadLine();
-
-        if (serialmonitor == "Button 2 pressed")
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            UnityEditor.EditorApplication.isPlaying = false;
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             coffee_ingredients.ingredients[1] = true;
-
         }
-        else if (serialmonitor == "Button 1 pressed")
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             coffee_ingredients.ingredients[2] = true;
         }
-        else if (serialmonitor == "Button 3 pressed")
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            
             npc = character.GetComponent<Character>();
 
-            color = arduino.ReadLine();
             ingredient = coffee_ingredients.Ingredient();
             order = coffee.Coffee(ingredient, color, temp);
             Debug.Log(order);
@@ -52,28 +45,29 @@ public class Arduino : MonoBehaviour
             bool result = Evaluate();
             if (result == true)
             {
-                arduino.Write("win");
+
                 Instantiate(character);
                 Destroy(character);
                 character = GameObject.Find("npc(Clone)");
                 character.name = "npc";
 
-
             }
             else
             {
-                arduino.Write("lose");
                 
+
             }
-
         }
-        else if (int.TryParse(serialmonitor, out temp) == true)
+        else if (Input.GetKeyDown(KeyCode.Space))
         {
-            Debug.Log(temp);
-        }
-        
-    }
+            Instantiate(character);
+            Destroy(character);
+            character = GameObject.Find("npc(Clone)");
+            character.name = "npc";
 
+        }
+
+    }
     private bool Evaluate()
     {
         if (order == npc.coffee_order)
@@ -84,6 +78,6 @@ public class Arduino : MonoBehaviour
         {
             return false;
         }
-        
+
     }
 }
