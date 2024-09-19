@@ -16,11 +16,14 @@ public class Arduino : MonoBehaviour
     public CoffeeIngredients coffee_ingredients;
     private Character npc;
     private GameObject character;
+    private GameObject character_clone;
+    private GameObject screen;
     // Start is called before the first frame update
     void Start()
     {
         arduino.Open ();
         character = GameObject.Find("npc");
+        screen = GameObject.Find("GameScreen");
     }
 
     // Update is called once per frame
@@ -53,9 +56,9 @@ public class Arduino : MonoBehaviour
             if (result == true)
             {
                 arduino.Write("win");
-                Instantiate(character);
+                character_clone = Instantiate(character, screen.transform);
                 Destroy(character);
-                character = GameObject.Find("npc(Clone)");
+                character = character_clone;
                 character.name = "npc";
 
 

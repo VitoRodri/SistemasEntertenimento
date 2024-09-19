@@ -12,10 +12,13 @@ public class Keyboard : MonoBehaviour
     public CoffeeIngredients coffee_ingredients;
     private Character npc;
     private GameObject character;
+    private GameObject character_clone;
+    private GameObject screen;
     // Start is called before the first frame update
     void Start()
     {
         character = GameObject.Find("npc");
+        screen = GameObject.Find("GameScreen");
     }
 
     // Update is called once per frame
@@ -46,9 +49,9 @@ public class Keyboard : MonoBehaviour
             if (result == true)
             {
 
-                Instantiate(character);
+                character_clone = Instantiate(character, screen.transform);
                 Destroy(character);
-                character = GameObject.Find("npc(Clone)");
+                character = character_clone;
                 character.name = "npc";
 
             }
@@ -60,9 +63,9 @@ public class Keyboard : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Space))
         {
-            Instantiate(character);
+            character_clone=Instantiate(character,screen.transform);
             Destroy(character);
-            character = GameObject.Find("npc(Clone)");
+            character = character_clone;
             character.name = "npc";
 
         }
