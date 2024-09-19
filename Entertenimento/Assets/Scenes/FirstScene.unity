@@ -447,6 +447,7 @@ GameObject:
   - component: {fileID: 170933892}
   - component: {fileID: 170933894}
   - component: {fileID: 170933893}
+  - component: {fileID: 170933895}
   m_Layer: 5
   m_Name: Ready
   m_TagString: Untagged
@@ -511,6 +512,43 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 170933891}
   m_CullTransparentMesh: 1
+--- !u!114 &170933895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 170933891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b58196116376f34ab1c59d725bc6d08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shakeMagnitude: 0.5
+  shakeSpeed: 10
+  rotationMagnitude: 2
+  rotationSpeed: 5
+--- !u!1 &209984570 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4185457133673664702, guid: 5cdfe10258796344f8880ae02c738742, type: 3}
+  m_PrefabInstance: {fileID: 420439595}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &209984574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 209984570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b58196116376f34ab1c59d725bc6d08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shakeMagnitude: 0.2
+  shakeSpeed: 15
+  rotationMagnitude: 0.5
+  rotationSpeed: 20
 --- !u!1 &212056152
 GameObject:
   m_ObjectHideFlags: 0
@@ -558,6 +596,7 @@ GameObject:
   - component: {fileID: 268058080}
   - component: {fileID: 268058082}
   - component: {fileID: 268058081}
+  - component: {fileID: 268058083}
   m_Layer: 5
   m_Name: Slide_Image
   m_TagString: Untagged
@@ -622,6 +661,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 268058079}
   m_CullTransparentMesh: 1
+--- !u!114 &268058083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 268058079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b58196116376f34ab1c59d725bc6d08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shakeMagnitude: 0.5
+  shakeSpeed: 10
+  rotationMagnitude: 0
+  rotationSpeed: 5
 --- !u!1 &277811768
 GameObject:
   m_ObjectHideFlags: 0
@@ -821,11 +876,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5132699476464320821, guid: 5cdfe10258796344f8880ae02c738742, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 121.5509
+      value: 95.426
       objectReference: {fileID: 0}
     - target: {fileID: 5132699476464320821, guid: 5cdfe10258796344f8880ae02c738742, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 121.5509
+      value: 95.426
       objectReference: {fileID: 0}
     - target: {fileID: 5132699476464320821, guid: 5cdfe10258796344f8880ae02c738742, type: 3}
       propertyPath: m_LocalScale.x
@@ -841,11 +896,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5132699476464320821, guid: 5cdfe10258796344f8880ae02c738742, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -618
+      value: -624
       objectReference: {fileID: 0}
     - target: {fileID: 5132699476464320821, guid: 5cdfe10258796344f8880ae02c738742, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -19
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 6223797481119009595, guid: 5cdfe10258796344f8880ae02c738742, type: 3}
       propertyPath: m_LocalPosition.x
@@ -904,6 +959,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8073079400574842492, guid: 5cdfe10258796344f8880ae02c738742, type: 3}
       insertIndex: -1
       addedObject: {fileID: 420439598}
+    - targetCorrespondingSourceObject: {fileID: 4185457133673664702, guid: 5cdfe10258796344f8880ae02c738742, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 209984574}
   m_SourcePrefab: {fileID: 100100000, guid: 5cdfe10258796344f8880ae02c738742, type: 3}
 --- !u!4 &420439596 stripped
 Transform:
@@ -1044,6 +1102,7 @@ GameObject:
   - component: {fileID: 1281712653}
   - component: {fileID: 1281712655}
   - component: {fileID: 1281712654}
+  - component: {fileID: 1281712656}
   m_Layer: 5
   m_Name: Display
   m_TagString: Untagged
@@ -1108,6 +1167,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1281712652}
   m_CullTransparentMesh: 1
+--- !u!114 &1281712656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1281712652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b58196116376f34ab1c59d725bc6d08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shakeMagnitude: 0.5
+  shakeSpeed: 10
+  rotationMagnitude: 0
+  rotationSpeed: 5
 --- !u!1 &1369447718
 GameObject:
   m_ObjectHideFlags: 0
@@ -1472,7 +1547,7 @@ GameObject:
   - component: {fileID: 1873690033}
   - component: {fileID: 1873690036}
   - component: {fileID: 1873690035}
-  - component: {fileID: 1873690034}
+  - component: {fileID: 1873690037}
   m_Layer: 5
   m_Name: Sugar
   m_TagString: Untagged
@@ -1499,23 +1574,6 @@ RectTransform:
   m_AnchoredPosition: {x: 138.52, y: -132.18}
   m_SizeDelta: {x: -624.3038, y: -385.3416}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1873690034
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1873690032}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8dba85c50ce3457429a99815703c74d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  imageToShake: {fileID: 1873690035}
-  shakeDuration: 0.5
-  shakeMagnitude: 10
-  originalPosition: {x: 0, y: 0, z: 0}
-  rectTransform: {fileID: 0}
 --- !u!114 &1873690035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1554,6 +1612,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1873690032}
   m_CullTransparentMesh: 1
+--- !u!114 &1873690037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1873690032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b58196116376f34ab1c59d725bc6d08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shakeMagnitude: 0.5
+  shakeSpeed: 5
+  rotationMagnitude: 1
+  rotationSpeed: 5
 --- !u!1 &2002379147
 GameObject:
   m_ObjectHideFlags: 0
@@ -1633,7 +1707,7 @@ GameObject:
   - component: {fileID: 2118869488}
   - component: {fileID: 2118869491}
   - component: {fileID: 2118869490}
-  - component: {fileID: 2118869489}
+  - component: {fileID: 2118869492}
   m_Layer: 5
   m_Name: Milk
   m_TagString: Untagged
@@ -1660,23 +1734,6 @@ RectTransform:
   m_AnchoredPosition: {x: 138.52, y: -77.377}
   m_SizeDelta: {x: -624.3038, y: -385.3416}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2118869489
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2118869487}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8dba85c50ce3457429a99815703c74d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  imageToShake: {fileID: 2118869490}
-  shakeDuration: 0.5
-  shakeMagnitude: 10
-  originalPosition: {x: 0, y: 0, z: 0}
-  rectTransform: {fileID: 0}
 --- !u!114 &2118869490
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1715,6 +1772,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2118869487}
   m_CullTransparentMesh: 1
+--- !u!114 &2118869492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2118869487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b58196116376f34ab1c59d725bc6d08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shakeMagnitude: 0.5
+  shakeSpeed: 10
+  rotationMagnitude: 1
+  rotationSpeed: 5
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
