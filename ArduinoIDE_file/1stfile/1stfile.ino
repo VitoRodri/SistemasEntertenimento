@@ -100,7 +100,7 @@ void loop() {
   } 
 
   int value=analogRead(A2);
-  value=map(value,0,1023,0,100);
+  value=map(value,0,208,0,100);
     if (value==100){
       Serial.println(100);
     } else if(value<100 and value>90){
