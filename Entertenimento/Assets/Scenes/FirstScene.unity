@@ -338,7 +338,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 153105324}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d5fcd87d910138346a6a918eb9c66a65, type: 3}
   m_Name: 
@@ -395,8 +395,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -643, y: 198.14856}
-  m_SizeDelta: {x: 254.6928, y: 76.2971}
+  m_AnchoredPosition: {x: -624, y: 198.3}
+  m_SizeDelta: {x: 260.2333, y: 99.075}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &277811770
 MonoBehaviour:
@@ -420,7 +420,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 25
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -665,6 +665,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39a7a119c38f0524683fc9e2d4cb9328, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  text: {fileID: 420439598}
   coffee_order: 
 --- !u!1 &1640447275
 GameObject:
