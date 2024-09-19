@@ -5,11 +5,11 @@ using UnityEngine;
 public class CofeeType : MonoBehaviour
 {
     //Added ingredients ex: milk, sugar, ...
-    private string[] coffee_name = { " dark ", "milk","sweet","sweet_milk" };
+    private string[] coffee_name = { " dark ", " milk "," sweet "," sweet_milk " };
     //Color of the coffee ex: green - matcha, ...
-    private string[] coffee_type = { " beans ","matcha","strawberries", "blueberry","white_chocolate", "special" };
+    private string[] coffee_type = { " beans "," matcha "," strawberries ", " blueberry "," white_chocolate ", " special " };
     //Coffee temperature
-    private string[] coffee_temp = { " hot ","medium","cold","iced", "evaporated" };
+    private string[] coffee_temp = { " hot "," medium "," cold "," iced ", " evaporated " };
 
 
     private int nomenclature;
