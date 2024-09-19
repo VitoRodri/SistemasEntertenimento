@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO.Ports;
+using UnityEngine.UI;
 
 public class Arduino : MonoBehaviour
 {
@@ -18,12 +19,16 @@ public class Arduino : MonoBehaviour
     private GameObject character;
     private GameObject character_clone;
     private GameObject screen;
+    private GameObject slide_temp;
+    private Slider slide;
     // Start is called before the first frame update
     void Start()
     {
         arduino.Open ();
         character = GameObject.Find("npc");
         screen = GameObject.Find("GameScreen");
+        slide_temp = GameObject.Find("Slider");
+        slide = slide_temp.GetComponent<Slider>();
     }
 
     // Update is called once per frame
@@ -32,7 +37,6 @@ public class Arduino : MonoBehaviour
         
 
         serialmonitor = arduino.ReadLine();
-
         if (serialmonitor == "Button 2 pressed")
         {
             coffee_ingredients.ingredients[1] = true;
@@ -72,7 +76,7 @@ public class Arduino : MonoBehaviour
         }
         else if (int.TryParse(serialmonitor, out temp) == true)
         {
-            Debug.Log(temp);
+            slide.value = temp;
         }
         
     }
