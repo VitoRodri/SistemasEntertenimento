@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CofeeType : MonoBehaviour
 {
@@ -15,7 +16,27 @@ public class CofeeType : MonoBehaviour
     private int nomenclature;
     private int type;
     private int temperature;
+    private GameObject coffee_stream;
+    private GameObject coffee_mug;
+    private GameObject coffee_fill;
+    private GameObject coffee_drop;
+    private Image drop;
+    private Image fill;
+    private Slider stream;
+    private Slider mug;
 
+    private void Start()
+    {
+        coffee_stream = GameObject.Find("Coffee_slide");
+        coffee_mug = GameObject.Find("Mug_fill");
+        stream= coffee_stream.GetComponent<Slider>();
+        mug= coffee_mug.GetComponent<Slider>();
+        coffee_drop = GameObject.Find("coffee_drop");
+        coffee_fill = GameObject.Find("coffee_fill");
+        drop= coffee_drop.GetComponent<Image>();
+        fill = coffee_fill.GetComponent<Image>();
+
+    }
 
     public string Coffee(int ingredient, string color, int temp)
     {
@@ -55,6 +76,68 @@ public class CofeeType : MonoBehaviour
             return 5;
         }
         
+    }
+    public void Coffee_Color_player(string color)
+    {
+        if (color == "Red")
+        {
+            drop.color = new Color(0.9f, 0.6f, 0.6f, 1f);
+            fill.color = new Color(0.9f, 0.6f, 0.6f, 1f);
+            Drop_fill(stream);
+            Drop_fill(mug);
+            stream.value = 0f;
+        }
+        else if (color == "Green")
+        {
+            drop.color = new Color(0.6f, 0.9f, 0.6f, 1f);
+            fill.color = new Color(0.6f, 0.9f, 0.6f, 1f);
+            Drop_fill(stream);
+            Drop_fill(mug);
+            stream.value = 0f;
+
+        }
+        else if (color == "Blue")
+        {
+            drop.color = new Color(0.5f, 0.6f, 0.9f, 1f);
+            fill.color = new Color(0.5f, 0.6f, 0.9f, 1f);
+            Drop_fill(stream);
+            Drop_fill(mug);
+            stream.value = 0f;
+
+        }
+        else if (color == "Black")
+        {
+            drop.color = new Color(0.3f, 0.2f, 0.2f, 1f);
+            fill.color = new Color(0.3f, 0.2f, 0.2f, 1f);
+            Drop_fill(stream);
+            Drop_fill(mug);
+            stream.value = 0f;
+
+        }
+        else if (color == "White")
+        {
+            drop.color = new Color(0.9f, 0.9f, 0.9f, 1f);
+            fill.color = new Color(0.9f, 0.9f, 0.9f, 1f);
+            Drop_fill(stream);
+            Drop_fill(mug);
+            stream.value = 0f;
+
+        }
+        else
+        {
+            drop.color = Color.white;
+            fill.color = Color.white;
+        }
+
+    }
+    private void Drop_fill(Slider s)
+    {
+        for (float i = 0; i <= 1;)
+        {
+            s.value = i;
+            i = i + 0.01f;
+        }
+
     }
 
     private int Coffee_Temperature(int temp)
