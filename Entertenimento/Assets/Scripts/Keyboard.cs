@@ -37,15 +37,8 @@ public class Keyboard : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (UnityEditor.EditorApplication.isPlaying==true)
-            {
-                UnityEditor.EditorApplication.isPlaying = false;
-            }
-            else
-            {
-                Application.Quit();
-            }
-            
+            Application.Quit();
+           
         }
         else if (Input.GetKeyDown(KeyCode.Alpha1))
         {
